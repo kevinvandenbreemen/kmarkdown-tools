@@ -1,7 +1,6 @@
 package com.vandenbreemen.kmarkdown.preparser
 
 import org.amshove.kluent.shouldContain
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class TOCPreparserTest {
