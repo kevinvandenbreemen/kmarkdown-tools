@@ -6,7 +6,7 @@ import java.util.*
  * Table of contents preparsing.  This can be used as a standalone program
  */
 class TOCPreparser {
-    fun parse(markdownContent: String): String {
+    fun parse(markdownContent: String, tocHeader: String = "Table of Contents"): String {
 
         val headersRegex = Regex("(?m)^#+\\s+(.*)$")
 
@@ -20,7 +20,7 @@ class TOCPreparser {
         val tableOfContents = StringBuilder()
 
         if (headers.isNotEmpty()) {
-            tableOfContents.append("Table of Contents\n")
+            tableOfContents.append("$tocHeader\n")
             for ((hashes, header) in headers) {
                 val indentation = "  ".repeat(hashes.count { it == '#' } - 1)
                 tableOfContents.append("$indentation- [${header.trim()}](#${
